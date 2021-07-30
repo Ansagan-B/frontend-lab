@@ -4,61 +4,81 @@
     <meta charset="UTF-8">
     <title>Artcore</title>
     <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
 </head>
 <body>
     <header id="header">
         <h1 class="heading"><a href="#"><span class="orange">ART</span> CORE</a></h1>
         <div class="icons">
             <div class="icon">
-                <a class="i facebook" href="#">f</a>
+                <a class="fa fa-facebook" aria-hidden="true" href="#"></a>
             </div>
             <div class="icon">
-                <a class="i twitter" href="#">t</a>
+                <a class="fa fa-twitter" aria-hidden="true" href="#"></a>
             </div>
             <div class="icon">
-                <a class="i linkedin" href="#">l</a>
+                <a class="fa fa-linkedin" aria-hidden="true" href="#"></a>
             </div>
             <div class="icon">
-                <a class="i rss" href="#">r</a>
+                <a class="fa fa-rss" aria-hidden="true" href="#"></a>
             </div>
         </div>
     </header>
+
     <nav class="navbar">
-        <div class="icons">
-            <div class="nav-button icon">&#128269;</div>
-            <div class="nav-button icon"><i class="fas fa-chevron-left"></i></div>
-            <div class="nav-button icon"><i class="fas fa-chevron-right"></i></div>
+        <div class="icons" id="nav-icon">
+            <div class="nav-button icon" onclick="">
+                <a class="fa fa-search" aria-hidden="true" href="#" id="cover"></a>
+            </div>
+            <div class="nav-button icon">
+                <a class="fa fa-chevron-left" aria-hidden="true" href="#"></a>
+            </div>
+            <div class="nav-button icon">
+                <a class="fa fa-chevron-right" aria-hidden="true" href="#"></a>
+            </div>
         </div>
-        <ul class="navbar">
-            <li class="orange navigation"><a href="#">HOME</a></li>/
-            <li class="navigation"><a href="#">SERVICES</a></li>/
-            <li class="navigation"><a href="#">PROJECTS</a></li>/
-    <!--            <select>-->
-    <!--                <option>Two columns</option>-->
-    <!--                <option>Tthre columns</option>-->
-    <!--                <option>Project single</option>-->
-    <!--            </select>-->
-            <li class="navigation"><a href="#">BLOG</a></li>/
-    <!--            <select>-->
-    <!--                <option>Blog masonary</option>-->
-    <!--                <option>Post single</option>-->
-    <!--            </select>-->
-            <li class="navigation"><a href="#">PAGES</a></li>/
-    <!--            <select>-->
-    <!--                <option>Our team</option>-->
-    <!--                <option>Archives</option>-->
-    <!--                <option>Teams</option>-->
-    <!--                <option>404 page</option>-->
-    <!--            </select>-->
-            <li class="navigation"><a href="#">CONTACT</a></li>
-        </ul>
+        <div class="navbar menu">
+            <a href="#" id="home" class="navigation">HOME</a>
+            <p class="slash">/</p>
+            <a href="#" class="navigation">SERVICES</a>
+            <p class="slash">/</p>
+                    <div class="dropdown">
+                        <button class="dropbtn"><a href="#" class="navigation">PROJECTS</a>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#">Two columns</a>
+                            <a href="#">Tthre columns</a>
+                            <a href="#">Project single</a>
+                        </div>
+                    </div>
+            <p class="slash">/</p>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#" class="navigation">BLOG</a>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Blog masonary</a>
+                        <a href="#">Post single</a>
+                    </div>
+                </div>
+            <p class="slash">/</p>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="#" class="navigation">PAGES</a>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Our team</a>
+                        <a href="#">Archives</a>
+                        <a href="#">Teams</a>
+                        <a href="#">404 page</a>
+                    </div>
+                </div>
+            <p class="slash">/</p>
+            <a href="#" class="navigation">CONTACT</a>
+        </div>
     </nav>
     <section class="main-img">
         <div id="pic-text">
             <h2 class="heading">I &#9829; Frontend</h2>
-            <br>
             <p>Some lorem ipsum text.</p>
-            <br>
             <p>
                 Credit goes to <a href="https://unsplash.com/" >Unsplash</a> for photos.
             </p>
@@ -69,134 +89,177 @@
         <h3 class="heading services h3">Our services</h3>
         <div class="boxes">
             <div class="box">
-                <h4>Quality Matter With Us</h4>
-                <p>
-                    Artcore is free HTML5 by template <span class="blue">template</span> <span class="green">mo</span>. Credit goes to
-                    <span class="orange">Unsplash</span> for photos used in this template. You can use this
-                    layout for your personal or commercial websites.
-                </p>
-                <div class="animation"></div>
+                <div class="box-text">
+                    <h4>Quality Matter With Us</h4>
+                    <p class="unsplash">
+                        Artcore is free HTML5 by template <span class="blue">template</span> <span class="green">mo</span>. Credit goes to
+                        <a href="https://unsplash.com/" class="orange">Unsplash</a> for photos used in this template. You can use this
+                        layout for your personal or commercial websites.
+                    </p>
+                </div>
+                <div class="animation"><i class="anmtn fa fa-flask" aria-hidden="true"></i>
+                </div>
             </div>
             <div class="box">
-                <h4>Creative Idea Important</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequuntur, odit, magnam, autem ipsum incidunt modi
-                    saepe id ullam consectetur unde minima quis.
-                </p>
-                <div class="animation"></div>
+                <div class="box-text">
+                    <h4>Creative Idea Important</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Consequuntur, odit, magnam, autem ipsum incidunt modi
+                        saepe id ullam consectetur unde minima quis.
+                    </p>
+                </div>
+                <div class="animation"><i class="anmtn fa fa-lightbulb-o" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-text">
+                    <h4>Our Open Office</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Consequuntur, odit, magnam, autem ipsum incidunt modi
+                        saepe id ullam consectetur unde minima quis.
+                    </p>
+                </div>
+                <div class="animation"><i class="anmtn fa fa-coffee" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-text">
+                    <h4>On-Time Delivery</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Consequuntur, odit, magnam, autem ipsum incidunt modi
+                        saepe id ullam consectetur unde minima quis.
+                    </p>
+                </div>
+                <div class="animation"><i class="anmtn fa fa-clock-o" aria-hidden="true"></i>
+                </div>
             </div>
             <div class="box">
-                <h4>Our Open Office</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequuntur, odit, magnam, autem ipsum incidunt modi
-                    saepe id ullam consectetur unde minima quis.
-                </p>
-                <div class="animation"></div>
+                <div class="box-text">
+                    <h4>Sincerely Supporting</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Consequuntur, odit, magnam, autem ipsum incidunt modi
+                        saepe id ullam consectetur unde minima quis.
+                    </p>
+                </div>
+                <div class="animation"><i class="anmtn fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </div>
             </div>
             <div class="box">
-                <h4>On-Time Delivery</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequuntur, odit, magnam, autem ipsum incidunt modi
-                    saepe id ullam consectetur unde minima quis.
-                </p>
-                <div class="animation"></div>
-            </div>
-            <div class="box">
-                <h4>Sincerely Supporting</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequuntur, odit, magnam, autem ipsum incidunt modi
-                    saepe id ullam consectetur unde minima quis.
-                </p>
-                <div class="animation"></div>
-            </div>
-            <div class="box">
-                <h4>Learning New Things </h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Consequuntur, odit, magnam, autem ipsum incidunt modi
-                    saepe id ullam consectetur unde minima quis.
-                </p>
-                <div class="animation"></div>
+                <div class="box-text">
+                    <h4>Learning New Things </h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Consequuntur, odit, magnam, autem ipsum incidunt modi
+                        saepe id ullam consectetur unde minima quis.
+                    </p>
+                </div>
+                <div class="animation"><i class="anmtn fa fa-graduation-cap" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
     </main>
+
     <section>
-        <h3 class="add-on heading h3">And here are some images for you... </h3>
+        <h3 class="fourth-title heading h3">And here are some images for you... </h3>
+
         <div class="items">
             <div class="item">
-                <img src="images/1-keepYSA.png" height="256" width="362" alt="1"/>
-                <h4><a href="#">Keep Your Stuff Alive</a></h4>
-                <p>10 November 2084 by Tawana</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/1-keepYSA.png" alt="1" class="pic" />
+                <div class="item-text">
+                    <h4><a href="#">Keep Your Stuff Alive</a></h4>
+                    <p class="item-date">10 November 2084 by Tawana</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/2-ALoveLetterTTC.png" height="242" width="362" alt="2"/>
-                <h4><a href="#">A Love Letter to the City</a></h4>
-                <p>2 November 2084 by Michael</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/2-ALoveLetterTTC.png"  class="pic" alt="2"/>
+                <div class="item-text">
+                    <h4><a href="#">A Love Letter to the City</a></h4>
+                    <p class="item-date">2 November 2084 by Michael</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/3-Design&ViolenceDebate.png" height="253" width="361" alt="3"/>
-                <h4><a href="#">Design and Violence Debate</a></h4>
-                <p>4 November 2084 by Tawana</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/3-Design&ViolenceDebate.png" class="pic" alt="3"/>
+                <div class="item-text">
+                    <h4><a href="#">Design and Violence Debate</a></h4>
+                    <p class="item-date">4 November 2084 by Tawana</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/4-BrigetteBrownOnUmbrellas.png" height="205" width="361" alt="4"/>
-                <h4><a href="#">Brigette Brown on Umbrellas</a></h4>
-                <p>8 November 2084 by Christina</p>
-                <p><a href="https://unsplash.com/">Artcore</a> is free HTML5 templatemo. by template There are total 12 HTML pages.
-                    Credit goes to <a href="https://unsplash.com/">Unsplash</a> for images. </p>
+                <img src="images/4-BrigetteBrownOnUmbrellas.png" class="pic" alt="4"/>
+                <div  class="item-text">
+                    <h4><a href="#">Brigette Brown on Umbrellas</a></h4>
+                    <p class="item-date">8 November 2084 by Christina</p>
+                    <p class="unsplash"><a href="https://unsplash.com/" class="orange">Artcore</a>
+                        is free HTML5 <span class="blue">template</span><span class="green">mo</span>.
+                        by template <br>There are total 12 HTML pages.
+                        Credit goes to <a href="https://unsplash.com/" class="orange">Unsplash</a> for images. </p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/5-TheNight-SideOfHospitals.png" height="315" width="361" alt="5"/>
-                <h4><a href="#">The Night-Side of Hospitals</a></h4>
-                <p>4 November 2084 by George</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/5-TheNight-SideOfHospitals.png" class="pic" alt="5"/>
+                <div class="item-text">
+                    <h4><a href="#">The Night-Side of Hospitals</a></h4>
+                    <p class="item-date">4 November 2084 by George</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/6-PortoDesignSummerSchool.png" height="360" width="361" alt="6"/>
-                <h4><a href="#">Porto Design Summer School</a></h4>
-                <p>4 November 2084 by Christina</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/6-PortoDesignSummerSchool.png" class="pic" alt="6"/>
+                <div class="item-text">
+                    <h4><a href="#">Porto Design Summer School</a></h4>
+                    <p class="item-date">4 November 2084 by Christina</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/7-AnOpenLetterToLarryPage.png" height="385" width="360" alt="7"/>
-                <h4><a href="#">An Open Letter to Larry Page</a></h4>
-                <p>6 November 2084 by Michael</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/7-AnOpenLetterToLarryPage.png" class="pic" alt="7"/>
+                <div class="item-text">
+                    <h4><a href="#">An Open Letter to Larry Page</a></h4>
+                    <p class="item-date">6 November 2084 by Michael</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/8-TheEssenceOfTeapot.png" height="194" width="361" alt="8"/>
-                <h4><a href="#">The Essence of a Teapot</a></h4>
-                <p>31 October 2084 by George</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/8-TheEssenceOfTeapot.png" class="pic" alt="8"/>
+                <div class="item-text">
+                    <h4><a href="#">The Essence of a Teapot</a></h4>
+                    <p class="item-date">31 October 2084 by George</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
             <div class="item">
-                <img src="images/9-WarOfStreets&Houses.png" height="192" width="361" alt="9"/>
-                <h4><a href="#">War of Streets and Houses</a></h4>
-                <p>4 November 2084 by George</p>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Alias, deleniti, id quibusdam aut
-                    optio saepe soluta tempore neque voluptatum.</p>
+                <img src="images/9-WarOfStreets&Houses.png" class="pic" alt="9"/>
+                <div class="pic-cover"><a class="fal fa-link" href="#"></a></div>
+                <div class="item-text">
+                    <h4><a href="#">War of Streets and Houses</a></h4>
+                    <p class="item-date">4 November 2084 by George</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Alias, deleniti, id quibusdam aut
+                        optio saepe soluta tempore neque voluptatum.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -207,43 +270,39 @@
         </h3>
         <div>
             <form id="form">
-                <p style="display: inline-block">
+                <p id="contactPage">
                     This is an example of a contact page. You can set the contact page
                     in your themes <br>backend and add, remove and modify the input fields, text areas,
                     dropdowns and <br>checkboxes from your backend as well.
                 </p>
                 <h4>
-                    <br>
                     Send Us Email
                 </h4>
                 <p>
-                    <label>
-                        <br>
+                    <label for="name">
                         Your name:
                     </label>
-                    <input>
+                    <input type="text" id="name">
                 </p>
                 <p>
-                    <label>
-                        <br>
+                    <label for="email">
                         Email Address:
                     </label>
-                    <input type="email">
+                    <input type="email" id="email">
                 </p>
                 <p>
-                    <label>
-                        <br>
+                    <label for="number">
                         Phone Number:
                     </label>
-                    <input>
+                    <input type="text" id="number">
                 </p>
                 <p>
-                    <label>
+                    <label for="message">
                         Your message:
                     </label>
-                    <textarea></textarea>
+                        <textarea id="message"></textarea>
                 </p>
-                <input type="submit" value="Send message">
+                <input type="submit" value="Send message" id="submit">
             </form>
         </div>
     </footer>
