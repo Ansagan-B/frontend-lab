@@ -3,28 +3,137 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap');
+}
+
 .navigation, .services, p, h3, h4, .navbar {
-    font-family: 'Roboto';
+    font-family: 'Roboto Slab', serif;
+}
+
+.navbar #home {
+    color: orange;
 }
 
 body {
     background-color: #efefef;
 }
 
-#pic-text h2,
+.fa {
+    display: inline-block;
+}
+
+#cover:active {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.8%;
+}
+
+.navbar {
+    overflow: hidden;
+}
+
+#nav-icon a:hover {
+    color: black;
+}
+
+.menu a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    margin: 10px;
+    padding: 28px 16px;
+    text-decoration: none;
+}
+
+/*.navigation::after {*/
+/*    content: '/';*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.navigation:last-child {*/
+/*    content: none;*/
+/*}*/
+
+.slash {
+    color: #d0d0d0;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    border-top: 1px solid #3A2E2B;
+    width: 200px;
+}
+
+.dropdown-content:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -20px;
+    left: 80px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+.dropdown-content a::after {
+    border: 10px solid transparent;
+}
+
+.dropdown-content a {
+    float: none;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 7px;
+}
+
+.dropdown-content a:hover {
+    color: orange;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: white;
+}
+
 #pic-text p,
 #pic-text a {
     color: white;
-    margin: 20px;
-    font: 400 14px 'Roboto';
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font: 400 28px 'Roboto Slab';
 }
 
 #pic-text h2 {
     color: white;
-    margin: 20px;
-    font-family:'Roboto';
-    font-size: 1.2em;
-    font-weight: 400;
+    margin-bottom: 30px;
+    font: 400 30px 'Roboto Slab';
+}
+
+#pic-text {
+    align-items: center;
 }
 
 #header {
@@ -34,7 +143,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    font-size: 0.9em;
+    font-size: 14px;
 }
 
 .icons {
@@ -48,13 +157,19 @@ body {
     width: 35px;
     height: 35px;
     border: 1px solid #d0d0d0;
-    margin: 0.2em;
+    margin: 3px;
     padding-top: 5px;
     text-align: center;
 }
 
-li {
-    list-style-type: none;
+.icon:hover {
+    border: 1px solid black;
+}
+
+.icon .fa {
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
 }
 
 .heading {
@@ -75,7 +190,7 @@ li {
     margin: 40px;
 }
 
-.navigation a:hover {
+.navbar a:hover {
     color: orange;
 }
 
@@ -98,11 +213,25 @@ li {
 }
 
 .h3 {
-    margin: 70px 150px;
+    margin-left: 150px;
+    font-weight: normal;
+    font-size: 1.5em;
+    padding: 70px 0;
 }
 
 .boxes {
-    display: grid;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.boxes .box h4 {
+    margin-bottom: 20px;
+}
+
+.boxes .box p {
+    color: #778899;
 }
 
 .boxes .box {
@@ -110,26 +239,72 @@ li {
     position: relative;
     width: 555px;
     padding: 25px;
-    margin-bottom: 30px;
-    margin-left: 150px;
+    margin: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: right;
 }
 
+.box:nth-child(2n) {
+    text-align: left;
+    flex-direction: row-reverse;
+}
+
+.box:nth-child(2n) .animation {
+    margin-right: 25px;
+    margin-left: 0;
+    position: center;
+}
+
+.box-text {
+    width: 395px;
+}
+
+.anmtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    width: 80px;
+    height: auto;
+}
+
+.anmtn:hover {
+    /*-webkit-transform: rotateZ(360deg);*/
+    /*-ms-transform: rotateZ(90deg);*/
+    animation-name: rotate;
+    animation-duration: 0.5s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .animation {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     line-height: 1;
+    border: 2px solid #e4e4e4;
+    margin-left: 25px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
 }
 
-.item a:hover {
+.animation:hover {
     color: orange;
+    border: 2px solid orange;
 }
 
 a {
@@ -137,33 +312,74 @@ a {
     color: black;
 }
 
-.add-on {
-    margin: 80px;
+.item a:hover {
+    color: orange;
+}
+
+.unsplash .orange {
+    color: orange;
+}
+
+.unsplash a:hover {
+    color: black;
 }
 
 section .items {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-content: center;
+    max-height: 1700px;
+}
+
+.pic {
+    width: 360px;
+    height: auto;
+}
+
+.pic-cover {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.fal {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
 }
 
 .item {
     background-color: white;
     position: relative;
-    margin: 10px;
-    width: 362px;
-    height: auto;
+    margin: 15px;
+    width: 360px;
+    height: 100%;
 }
 
-.item p,
-.item h4 {
-    padding: 15px;
-}
-
-.item p {
-    font-size: 0.87em;
+.item-text {
+    padding: 25px;
     color: #778899;
     line-height: 1.5em;
+}
+
+.item-text p {
+    font-size: 14px;
+}
+
+.item-text h4 {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.item-date {
+    padding-bottom: 10px;
 }
 
 .orange {
@@ -179,11 +395,57 @@ section .items {
 }
 
 .footer {
-    margin: 80px 150px;
+    margin-top: 80px;
+    margin-left:  150px;
 }
 
 #form {
     background-color: white;
     padding: 40px;
-    margin: 150px;
+    margin: 80px 150px;
 }
+
+label {
+    font-size: 0.875em;
+    color: #778899;
+    line-height: 1.5em;
+    width: 150px;
+}
+
+#form p {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#form h4 {
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#contactPage {
+    font-size: 0.875em;
+    color: #778899;
+    line-height: 1.5em;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #d0d0d0;
+}
+
+#message {
+    width: 380px;
+    height: 120px;
+    border: 1px solid #d0d0d0;
+}
+
+#submit {
+    background-color: white;
+    text-transform: uppercase;
+    margin-left: 150px;
+    width: 250px;
+    font-weight: bold;
+}
+
