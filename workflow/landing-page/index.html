@@ -5,306 +5,365 @@
     <title>Artcore</title>
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <header id="header">
-        <h1 class="heading"><a href="#"><span class="orange">ART</span> CORE</a></h1>
-        <div class="icons">
-            <div class="icon">
-                <a class="fa fa-facebook" aria-hidden="true" href="#"></a>
-            </div>
-            <div class="icon">
-                <a class="fa fa-twitter" aria-hidden="true" href="#"></a>
-            </div>
-            <div class="icon">
-                <a class="fa fa-linkedin" aria-hidden="true" href="#"></a>
-            </div>
-            <div class="icon">
-                <a class="fa fa-rss" aria-hidden="true" href="#"></a>
-            </div>
+<header id="header">
+    <h1 class="heading"><a href="#"><span class="orange">ART</span> CORE</a></h1>
+    <div class="icons">
+        <div class="icon">
+            <a class="fa fa-facebook" aria-hidden="true" href="#"></a>
         </div>
-    </header>
+        <div class="icon">
+            <a class="fa fa-twitter" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="icon">
+            <a class="fa fa-linkedin" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="icon">
+            <a class="fa fa-rss" aria-hidden="true" href="#"></a>
+        </div>
+    </div>
+</header>
 
-    <nav class="navbar">
-        <div class="icons" id="nav-icon">
-            <div class="nav-button icon" onclick="">
-                <a class="fa fa-search" aria-hidden="true" href="#" id="cover"></a>
+<div class="navbar">
+    <div class="icons" id="nav-icon">
+        <div class="nav-button icon">
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <p>Some text is here...</p>
+                </div>
             </div>
-            <div class="nav-button icon">
-                <a class="fa fa-chevron-left" aria-hidden="true" href="#"></a>
-            </div>
-            <div class="nav-button icon">
-                <a class="fa fa-chevron-right" aria-hidden="true" href="#"></a>
+            <span onclick="openNav()"><a id="search" class="fa fa-search" href="#"></a></span>
+        </div>
+        <div class="nav-button icon">
+            <a class="fa fa-chevron-left" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="nav-button icon">
+            <a class="fa fa-chevron-right" aria-hidden="true" href="#"></a>
+        </div>
+    </div>
+
+    <nav class="menu" id="myMenu">
+        <a href="javascript:void(0);" class="burger" onclick="myFunction()" >
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="#" id="home" class="navigation">HOME</a>
+        <p class="slash">/</p>
+        <a href="#" class="navigation">SERVICES</a>
+        <p class="slash">/</p>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="#" class="navigation">PROJECTS</a>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Two columns</a>
+                <a href="#">Tthre columns</a>
+                <a href="#" class="wthtBorder">Project single</a>
             </div>
         </div>
-        <div class="navbar menu">
-            <a href="#" id="home" class="navigation">HOME</a>
-            <p class="slash">/</p>
-            <a href="#" class="navigation">SERVICES</a>
-            <p class="slash">/</p>
-                    <div class="dropdown">
-                        <button class="dropbtn"><a href="#" class="navigation">PROJECTS</a>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="#">Two columns</a>
-                            <a href="#">Tthre columns</a>
-                            <a href="#">Project single</a>
-                        </div>
-                    </div>
-            <p class="slash">/</p>
-                <div class="dropdown">
-                    <button class="dropbtn"><a href="#" class="navigation">BLOG</a>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Blog masonary</a>
-                        <a href="#">Post single</a>
-                    </div>
-                </div>
-            <p class="slash">/</p>
-                <div class="dropdown">
-                    <button class="dropbtn"><a href="#" class="navigation">PAGES</a>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Our team</a>
-                        <a href="#">Archives</a>
-                        <a href="#">Teams</a>
-                        <a href="#">404 page</a>
-                    </div>
-                </div>
-            <p class="slash">/</p>
-            <a href="#" class="navigation">CONTACT</a>
+        <p class="slash">/</p>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="#" class="navigation">BLOG</a>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Blog masonary</a>
+                <a href="#" class="wthtBorder">Post single</a>
+            </div>
         </div>
+        <p class="slash">/</p>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="#" class="navigation">PAGES</a>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Our team</a>
+                <a href="#">Archives</a>
+                <a href="#">Teams</a>
+                <a href="#" class="wthtBorder">404 page</a>
+            </div>
+        </div>
+        <p class="slash">/</p>
+        <a href="#" class="navigation">CONTACT</a>
     </nav>
-    <section class="main-img">
-        <div id="pic-text">
-            <h2 class="heading">I &#9829; Frontend</h2>
-            <p>Some lorem ipsum text.</p>
-            <p>
-                Credit goes to <a href="https://unsplash.com/" >Unsplash</a> for photos.
-            </p>
-        </div>
-    </section>
+</div>
 
-    <main>
-        <h3 class="heading services h3">Our services</h3>
-        <div class="boxes">
-            <div class="box">
-                <div class="box-text">
-                    <h4>Quality Matter With Us</h4>
-                    <p class="unsplash">
-                        Artcore is free HTML5 by template <span class="blue">template</span> <span class="green">mo</span>. Credit goes to
-                        <a href="https://unsplash.com/" class="orange">Unsplash</a> for photos used in this template. You can use this
-                        layout for your personal or commercial websites.
-                    </p>
-                </div>
-                <div class="animation"><i class="anmtn fa fa-flask" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-text">
-                    <h4>Creative Idea Important</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Consequuntur, odit, magnam, autem ipsum incidunt modi
-                        saepe id ullam consectetur unde minima quis.
-                    </p>
-                </div>
-                <div class="animation"><i class="anmtn fa fa-lightbulb-o" aria-hidden="true"></i>
-                </div>
-            </div>
+<section class="main-img">
+    <div id="img-text">
+        <h2 class="heading">I &#9829; Frontend</h2>
+        <p>Some lorem ipsum text.</p>
+        <p>
+            Credit goes to <a href="https://unsplash.com/">Unsplash</a> for photos.
+        </p>
+    </div>
+</section>
 
-            <div class="box">
-                <div class="box-text">
-                    <h4>Our Open Office</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Consequuntur, odit, magnam, autem ipsum incidunt modi
-                        saepe id ullam consectetur unde minima quis.
-                    </p>
-                </div>
-                <div class="animation"><i class="anmtn fa fa-coffee" aria-hidden="true"></i>
-                </div>
+<main>
+    <h3 class="heading services h-3">Our services</h3>
+    <div class="boxes">
+        <div class="box">
+            <div class="box-text">
+                <h4>Quality Matter With Us</h4>
+                <p class="unsplash">
+                    Artcore is free HTML5 by template <span class="blue">template</span> <span class="green">mo</span>.
+                    Credit goes to
+                    <a href="https://unsplash.com/" class="orange">Unsplash</a> for photos used in this template. You
+                    can use this
+                    layout for your personal or commercial websites.
+                </p>
             </div>
-
-            <div class="box">
-                <div class="box-text">
-                    <h4>On-Time Delivery</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Consequuntur, odit, magnam, autem ipsum incidunt modi
-                        saepe id ullam consectetur unde minima quis.
-                    </p>
-                </div>
-                <div class="animation"><i class="anmtn fa fa-clock-o" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-text">
-                    <h4>Sincerely Supporting</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Consequuntur, odit, magnam, autem ipsum incidunt modi
-                        saepe id ullam consectetur unde minima quis.
-                    </p>
-                </div>
-                <div class="animation"><i class="anmtn fa fa-thumbs-o-up" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-text">
-                    <h4>Learning New Things </h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Consequuntur, odit, magnam, autem ipsum incidunt modi
-                        saepe id ullam consectetur unde minima quis.
-                    </p>
-                </div>
-                <div class="animation"><i class="anmtn fa fa-graduation-cap" aria-hidden="true"></i>
-                </div>
+            <div class="animation"><i class="anmtn fa fa-flask" aria-hidden="true"></i>
             </div>
         </div>
-    </main>
+        <div class="box">
+            <div class="box-text">
+                <h4>Creative Idea Important</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="anmtn fa fa-lightbulb-o" aria-hidden="true"></i>
+            </div>
+        </div>
 
-    <section>
-        <h3 class="fourth-title heading h3">And here are some images for you... </h3>
+        <div class="box">
+            <div class="box-text">
+                <h4>Our Open Office</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="anmtn fa fa-coffee" aria-hidden="true"></i>
+            </div>
+        </div>
 
-        <div class="items">
-            <div class="item">
-                <img src="images/1-keepYSA.png" alt="1" class="pic" />
-                <div class="item-text">
+        <div class="box">
+            <div class="box-text">
+                <h4>On-Time Delivery</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="anmtn fa fa-clock-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>Sincerely Supporting</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="anmtn fa fa-thumbs-o-up" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>Learning New Things </h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="anmtn fa fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section>
+    <h3 class="fourth-title heading h-3">And here are some images for you... </h3>
+    <div id="card-wrap">
+        <div class="pic-cards">
+            <div class="card">
+                <div class="pic-cover">
+                    <img src="images/1-keepYSA.png" alt="1" class="pic"/>
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">Keep Your Stuff Alive</a></h4>
-                    <p class="item-date">10 November 2084 by Tawana</p>
+                    <p class="card-date">10 November 2084 by Tawana</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
-                <img src="images/2-ALoveLetterTTC.png"  class="pic" alt="2"/>
-                <div class="item-text">
+            <div class="card">
+                <div class="pic-cover">
+                    <img src="images/2-ALoveLetterTTC.png" class="pic" alt="2"/>
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">A Love Letter to the City</a></h4>
-                    <p class="item-date">2 November 2084 by Michael</p>
+                    <p class="card-date">2 November 2084 by Michael</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/3-Design&ViolenceDebate.png" class="pic" alt="3"/>
-                <div class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">Design and Violence Debate</a></h4>
-                    <p class="item-date">4 November 2084 by Tawana</p>
+                    <p class="card-date">4 November 2084 by Tawana</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/4-BrigetteBrownOnUmbrellas.png" class="pic" alt="4"/>
-                <div  class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">Brigette Brown on Umbrellas</a></h4>
-                    <p class="item-date">8 November 2084 by Christina</p>
+                    <p class="card-date">8 November 2084 by Christina</p>
                     <p class="unsplash"><a href="https://unsplash.com/" class="orange">Artcore</a>
                         is free HTML5 <span class="blue">template</span><span class="green">mo</span>.
                         by template <br>There are total 12 HTML pages.
                         Credit goes to <a href="https://unsplash.com/" class="orange">Unsplash</a> for images. </p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/5-TheNight-SideOfHospitals.png" class="pic" alt="5"/>
-                <div class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">The Night-Side of Hospitals</a></h4>
-                    <p class="item-date">4 November 2084 by George</p>
+                    <p class="card-date">4 November 2084 by George</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/6-PortoDesignSummerSchool.png" class="pic" alt="6"/>
-                <div class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">Porto Design Summer School</a></h4>
-                    <p class="item-date">4 November 2084 by Christina</p>
+                    <p class="card-date">4 November 2084 by Christina</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/7-AnOpenLetterToLarryPage.png" class="pic" alt="7"/>
-                <div class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">An Open Letter to Larry Page</a></h4>
-                    <p class="item-date">6 November 2084 by Michael</p>
+                    <p class="card-date">6 November 2084 by Michael</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/8-TheEssenceOfTeapot.png" class="pic" alt="8"/>
-                <div class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">The Essence of a Teapot</a></h4>
-                    <p class="item-date">31 October 2084 by George</p>
+                    <p class="card-date">31 October 2084 by George</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
-            <div class="item">
+            <div class="card">
+                <div class="pic-cover">
                 <img src="images/9-WarOfStreets&Houses.png" class="pic" alt="9"/>
-                <div class="pic-cover"><a class="fal fa-link" href="#"></a></div>
-                <div class="item-text">
+                    <div class="middle">
+                        <a class="fa-link" href="#"></a>
+                    </div>
+                </div>
+                <div class="card-text">
                     <h4><a href="#">War of Streets and Houses</a></h4>
-                    <p class="item-date">4 November 2084 by George</p>
+                    <p class="card-date">4 November 2084 by George</p>
                     <p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Alias, deleniti, id quibusdam aut
                         optio saepe soluta tempore neque voluptatum.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <h3 class="heading footer">
-            Contact us
-        </h3>
-        <div>
-            <form id="form">
-                <p id="contactPage">
-                    This is an example of a contact page. You can set the contact page
-                    in your themes <br>backend and add, remove and modify the input fields, text areas,
-                    dropdowns and <br>checkboxes from your backend as well.
-                </p>
-                <h4>
-                    Send Us Email
-                </h4>
-                <p>
-                    <label for="name">
-                        Your name:
-                    </label>
-                    <input type="text" id="name">
-                </p>
-                <p>
-                    <label for="email">
-                        Email Address:
-                    </label>
-                    <input type="email" id="email">
-                </p>
-                <p>
-                    <label for="number">
-                        Phone Number:
-                    </label>
-                    <input type="text" id="number">
-                </p>
-                <p>
-                    <label for="message">
-                        Your message:
-                    </label>
-                        <textarea id="message"></textarea>
-                </p>
-                <input type="submit" value="Send message" id="submit">
-            </form>
-        </div>
-    </footer>
+<footer>
+    <h3 class="heading footer">
+        Contact us
+    </h3>
+    <div>
+        <form id="form">
+            <p id="contactPage">
+                This is an example of a contact page. You can set the contact page
+                in your themes <br>backend and add, remove and modify the input fields, text areas,
+                dropdowns and <br>checkboxes from your backend as well.
+            </p>
+            <h4>
+                Send Us Email
+            </h4>
+            <p>
+                <label for="name">
+                    Your name:
+                </label>
+                <input type="text" id="name">
+            </p>
+            <p>
+                <label for="email">
+                    Email Address:
+                </label>
+                <input type="email" id="email">
+            </p>
+            <p>
+                <label for="number">
+                    Phone Number:
+                </label>
+                <input type="text" id="number">
+            </p>
+            <p>
+                <label for="message">
+                    Your message:
+                </label>
+                <textarea id="message"></textarea>
+            </p>
+            <input type="submit" value="Send message" id="submit">
+        </form>
+    </div>
+</footer>
 </body>
 </html>
