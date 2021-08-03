@@ -13,7 +13,7 @@
 <body>
 <header id="header">
     <h1 class="heading"><a href="#"><span class="orange">ART</span> CORE</a></h1>
-    <div class="icons">
+    <div class="header-icons">
         <div class="icon">
             <a class="fa fa-facebook" aria-hidden="true" href="#"></a>
         </div>
@@ -30,10 +30,10 @@
 </header>
 
 <div class="navbar">
-    <div class="icons" id="nav-icon">
+    <div class="nav-icons" id="nav-icon">
         <div class="nav-button icon">
-            <div id="myNav" class="overlay closedNav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div id="overlay" class="overlay closed-nav">
+                <a href="#" class="close-btn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <p>Some text is here...</p>
                 </div>
@@ -47,46 +47,46 @@
         <div class="nav-button icon">
             <a class="fa fa-chevron-right" aria-hidden="true" href="#"></a>
         </div>
-        <a href="javascript:void(0);" class="burger" id="burger" onclick="addClassName()">
+        <a href="#" class="burger" id="burger" onclick="addClassName()">
             <i class="fa fa-bars"></i>
         </a>
     </div>
 
-    <nav class="menu" id="myMenu">
+    <nav class="menu" id="page-menu">
         <a href="#" id="home" class="navigation">Home</a>
         <p class="slash">/</p>
         <a href="#" class="navigation">Services</a>
         <p class="slash">/</p>
         <div class="dropdown">
-            <div class="dropbtn">
+            <div class="drop-btn">
                 <a href="#" class="navigation">Projects</a>
             </div>
             <div class="dropdown-content">
                 <a href="#">Two columns</a>
                 <a href="#">Tthre columns</a>
-                <a href="#" class="wthtBorder">Project single</a>
+                <a href="#" class="no-border">Project single</a>
             </div>
         </div>
         <p class="slash">/</p>
         <div class="dropdown">
-            <div class="dropbtn">
+            <div class="drop-btn">
                 <a href="#" class="navigation">Blog</a>
             </div>
             <div class="dropdown-content">
                 <a href="#">Blog masonary</a>
-                <a href="#" class="wthtBorder">Post single</a>
+                <a href="#" class="no-border">Post single</a>
             </div>
         </div>
         <p class="slash">/</p>
         <div class="dropdown">
-            <div class="dropbtn">
+            <div class="drop-btn">
                 <a href="#" class="navigation">Pages</a>
             </div>
             <div class="dropdown-content">
                 <a href="#">Our team</a>
                 <a href="#">Archives</a>
                 <a href="#">Teams</a>
-                <a href="#" class="wthtBorder">404 page</a>
+                <a href="#" class="no-border">404 page</a>
             </div>
         </div>
         <p class="slash">/</p>
@@ -119,7 +119,7 @@
                     layout for your personal or commercial websites.
                 </p>
             </div>
-            <div class="animation"><i class="anmtn fa fa-flask" aria-hidden="true"></i>
+            <div class="animation"><i class="animation-icon fa fa-flask" aria-hidden="true"></i>
             </div>
         </div>
         <div class="box">
@@ -131,7 +131,7 @@
                     saepe id ullam consectetur unde minima quis.
                 </p>
             </div>
-            <div class="animation"><i class="anmtn fa fa-lightbulb-o" aria-hidden="true"></i>
+            <div class="animation"><i class="animation-icon fa fa-lightbulb-o" aria-hidden="true"></i>
             </div>
         </div>
         <div class="box">
@@ -143,7 +143,7 @@
                     saepe id ullam consectetur unde minima quis.
                 </p>
             </div>
-            <div class="animation"><i class="anmtn fa fa-coffee" aria-hidden="true"></i>
+            <div class="animation"><i class="animation-icon fa fa-coffee" aria-hidden="true"></i>
             </div>
         </div>
         <div class="box">
@@ -155,7 +155,7 @@
                     saepe id ullam consectetur unde minima quis.
                 </p>
             </div>
-            <div class="animation"><i class="anmtn fa fa-clock-o" aria-hidden="true"></i>
+            <div class="animation"><i class="animation-icon fa fa-clock-o" aria-hidden="true"></i>
             </div>
         </div>
         <div class="box">
@@ -167,7 +167,7 @@
                     saepe id ullam consectetur unde minima quis.
                 </p>
             </div>
-            <div class="animation"><i class="anmtn fa fa-thumbs-o-up" aria-hidden="true"></i>
+            <div class="animation"><i class="animation-icon fa fa-thumbs-o-up" aria-hidden="true"></i>
             </div>
         </div>
         <div class="box">
@@ -179,7 +179,7 @@
                     saepe id ullam consectetur unde minima quis.
                 </p>
             </div>
-            <div class="animation"><i class="anmtn fa fa-graduation-cap" aria-hidden="true"></i>
+            <div class="animation"><i class="animation-icon fa fa-graduation-cap" aria-hidden="true"></i>
             </div>
         </div>
     </div>
@@ -335,38 +335,38 @@
     </h3>
     <div>
         <form id="form">
-            <p id="contactPage">
+            <div id="contact-page">
                 This is an example of a contact page. You can set the contact page
                 in your themes <br>backend and add, remove and modify the input fields, text areas,
                 dropdowns and <br>checkboxes from your backend as well.
-            </p>
+            </div>
             <h4>
                 Send Us Email
             </h4>
-            <p>
+            <div>
                 <label for="name">
                     Your name:
                 </label>
                 <input type="text" id="name">
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="email">
                     Email Address:
                 </label>
                 <input type="email" id="email">
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="number">
                     Phone Number:
                 </label>
                 <input type="text" id="number">
-            </p>
-            <p>
+            </div>
+            <div>
                 <label for="message">
                     Your message:
                 </label>
                 <textarea id="message"></textarea>
-            </p>
+            </div>
             <input type="submit" value="Send message" id="submit">
         </form>
     </div>

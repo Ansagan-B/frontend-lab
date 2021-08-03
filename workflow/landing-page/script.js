@@ -1,5 +1,5 @@
 function addClassName() {
-    let myMenu = document.getElementById("myMenu");
+    let myMenu = document.getElementById("page-menu");
     if (myMenu.className === "menu") {
         myMenu.classList.add("responsive");
     } else {
@@ -7,12 +7,12 @@ function addClassName() {
     }
 }
 
-let myNav = document.getElementById('myNav');
+let myNav = document.getElementById('overlay');
 
 function openNav() {
-    myNav.classList.remove('closedNav');
+    myNav.classList.remove('closed-nav');
 }
 
 function closeNav() {
-    myNav.classList.add('closedNav');
+    myNav.classList.add('closed-nav');
 }
