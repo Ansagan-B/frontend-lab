@@ -38,7 +38,8 @@ a {
     font-size: 1.5em;
     padding: 70px 0;
 }
-            /*   header и nav   */
+
+/*   header и nav   */
 
 #header {
     padding: 43px;
@@ -50,10 +51,15 @@ a {
     font-size: 14px;
 }
 
-#myMenu .dropbtn {
+.header-icons {
+    margin-left: 55px;
+    display: flex;
+    flex-direction: row;
+}
+
+#page-menu .drop-btn {
     display: flex;
     padding: 15px 5px;
-    /*margin: 40px;*/
 }
 
 .navbar a:hover {
@@ -70,25 +76,11 @@ a {
     display: inline-block;
 }
 
-/*#myNav.overlay.closedNav{*/
-/*    visibility: hidden;*/
-/*    height: 0;*/
-/*    width: 100%;*/
-/*    position: fixed;*/
-/*    z-index: 1;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    background-color: rgb(0,0,0);*/
-/*    background-color: rgba(0,0,0, 0.9);*/
-/*    overflow-y: hidden;*/
-/*    transition: 0.5s;*/
-/*}*/
-
-.closedNav {
+.closed-nav {
     transform: translateY(-100%);
 }
 
-#myNav .overlay-content p {
+#overlay .overlay-content p {
     position: relative;
     top: 300px;
     width: 100%;
@@ -105,13 +97,13 @@ a {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.9);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
     overflow-y: hidden;
     transition: 0.5s;
 }
 
-.closebtn {
+.close-btn {
     position: absolute;
     font-size: 1.5em;
     top: 20px;
@@ -120,20 +112,24 @@ a {
 }
 
 @media screen and (max-height: 450px) {
-    .overlay {overflow-y: auto;}
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
+    .overlay {
+        overflow-y: auto;
+    }
+
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .close-btn {
         font-size: 40px;
         top: 15px;
         right: 35px;
     }
 }
 
-
 @media screen and (min-width: 1000px) {
     .navbar {
         overflow: hidden;
-        /*margin: 30px 0;*/
         display: flex;
         flex-direction: row;
     }
@@ -170,13 +166,9 @@ a {
         text-decoration: none;
     }
 }
+
 .menu a:hover {
     color: black;
-}
-
-.menu a.active {
-    background-color: #04AA6D;
-    color: white;
 }
 
 @media screen and (min-width: 1000px) {
@@ -194,16 +186,16 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
-    .menu a, .menu p {display: none;}
+    .menu a, .menu p {
+        display: none;
+    }
+
     #burger {
         visibility: visible;
-        /*float: right;*/
         display: block;
-        /*flex-direction: row;*/
-        /*justify-content: flex-end;*/
         margin-left: 620px;
+        margin-right: 15px;
         border: 1px solid black;
-        /*padding: 10px;*/
         background-color: #2c2c2c;
         font-size: 0.8em;
         width: 36px;
@@ -213,20 +205,22 @@ a {
         transition: all 0.5s ease 0s;
         color: white;
     }
+
     #nav-icon {
         margin: 35px 15px 5px 15px;
     }
-    .menu.responsive {position: absolute;}
-    #myMenu a, #myMenu .dropdown .dropbtn a,
-    #myMenu .dropdown .dropdown-content a {
-        font: 300 18px 'Roboto Slab';
-        /*border-top: 1px solid white;*/
-        /*width: 1000px;*/
+
+    .menu.responsive {
+        position: absolute;
     }
+
+    #page-menu a, #page-menu .dropdown .drop-btn a,
+    #page-menu .dropdown .dropdown-content a {
+        font: 300 18px 'Roboto Slab';
+    }
+
     .menu.responsive a.burger {
         position: absolute;
-        /*display: block;*/
-        /*padding-left: 80%;*/
         right: 0;
         top: 0;
         font-size: 0.8em;
@@ -238,10 +232,12 @@ a {
         line-height: 3px;
         text-align: center;
     }
+
     .menu.responsive {
         margin: 35px 0 0 0;
         width: 100%;
     }
+
     .menu.responsive,
     .menu.responsive .dropdown-content,
     .menu.responsive .dropdown-content a {
@@ -257,7 +253,8 @@ a {
         background-color: #2c2c2c;
         position: relative;
     }
-    .menu.responsive .dropbtn a,
+
+    .menu.responsive .drop-btn a,
     .menu.responsive a {
         background-color: #2c2c2c;
         float: left;
@@ -268,6 +265,7 @@ a {
         margin: 0 10px;
         padding: 10px 10px;
     }
+
     .menu.responsive .dropdown-content a {
         padding-left: 50px;
     }
@@ -282,7 +280,7 @@ a {
     overflow: hidden;
 }
 
-.dropdown .dropbtn {
+.dropdown .drop-btn {
     font-size: 16px;
     border: none;
     outline: none;
@@ -313,9 +311,10 @@ a {
 }
 
 @media screen and (min-width: 1000px) {
-    #myMenu a, #myMenu .dropdown .dropbtn a {
+    #page-menu a, #page-menu .dropdown .drop-btn a {
         text-transform: uppercase;
     }
+
     .dropdown-content a {
         float: none;
         text-decoration: none;
@@ -326,22 +325,24 @@ a {
         width: auto;
         padding: 10px;
     }
+
     .dropdown:hover .dropdown-content {
         display: block;
         background-color: white;
     }
 }
 
-.dropdown .dropdown-content .wthtBorder {
+.dropdown .dropdown-content .no-border {
     border-bottom: initial;
 }
 
 .dropdown-content a:hover {
     color: orange;
 }
-            /*   ICONS    */
 
-.icons {
+/*   ICONS    */
+
+.nav-icons {
     margin-left: 55px;
     display: flex;
     flex-direction: row;
@@ -365,7 +366,8 @@ a {
     align-items: center;
     margin-top: 5px;
 }
-                /*  Фоновое фото  */
+
+/*  Фоновое фото  */
 
 #img-text p,
 #img-text a {
@@ -403,7 +405,8 @@ a {
 .main-img p {
     font: 400 14px 'Roboto Slab';
 }
-          /*       OUR SERVICES       */
+
+/*       OUR SERVICES       */
 
 .boxes {
     display: flex;
@@ -447,7 +450,7 @@ a {
     width: 395px;
 }
 
-.anmtn {
+.animation-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -457,7 +460,7 @@ a {
     height: auto;
 }
 
-.anmtn:hover {
+.animation-icon:hover {
     animation-name: rotate;
     animation-duration: 0.5s;
 }
@@ -516,7 +519,9 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
-    .pic-cards {max-height: 2600px;}
+    .pic-cards {
+        max-height: 2600px;
+    }
 }
 
 .card {
@@ -604,7 +609,8 @@ a {
 .card-date {
     padding-bottom: 10px;
 }
-        /*      FOOTER     */
+
+/*      FOOTER     */
 
 #footer {
     margin-left: 150px;
@@ -626,7 +632,7 @@ label {
     width: 150px;
 }
 
-#form p {
+#form div {
     display: flex;
     margin-bottom: 10px;
 }
@@ -637,7 +643,7 @@ label {
     font-weight: 400;
 }
 
-#contactPage {
+#contact-page {
     font-size: 0.875em;
     color: #778899;
     line-height: 1.5em;
