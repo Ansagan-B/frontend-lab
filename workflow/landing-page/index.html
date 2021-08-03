@@ -5,8 +5,11 @@
     <title>Artcore</title>
     <link href="styles.css" rel="stylesheet">
     <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,900">
 </head>
+
 <body>
 <header id="header">
     <h1 class="heading"><a href="#"><span class="orange">ART</span> CORE</a></h1>
@@ -29,13 +32,14 @@
 <div class="navbar">
     <div class="icons" id="nav-icon">
         <div class="nav-button icon">
-            <div id="myNav" class="overlay">
+            <div id="myNav" class="overlay closedNav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
                     <p>Some text is here...</p>
                 </div>
             </div>
             <span onclick="openNav()"><a id="search" class="fa fa-search" href="#"></a></span>
+
         </div>
         <div class="nav-button icon">
             <a class="fa fa-chevron-left" aria-hidden="true" href="#"></a>
@@ -43,19 +47,20 @@
         <div class="nav-button icon">
             <a class="fa fa-chevron-right" aria-hidden="true" href="#"></a>
         </div>
+        <a href="javascript:void(0);" class="burger" id="burger" onclick="addClassName()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <nav class="menu" id="myMenu">
-        <a href="javascript:void(0);" class="burger" onclick="myFunction()" >
-            <i class="fa fa-bars"></i>
-        </a>
-        <a href="#" id="home" class="navigation">HOME</a>
+        <a href="#" id="home" class="navigation">Home</a>
         <p class="slash">/</p>
-        <a href="#" class="navigation">SERVICES</a>
+        <a href="#" class="navigation">Services</a>
         <p class="slash">/</p>
         <div class="dropdown">
-            <button class="dropbtn"><a href="#" class="navigation">PROJECTS</a>
-            </button>
+            <div class="dropbtn">
+                <a href="#" class="navigation">Projects</a>
+            </div>
             <div class="dropdown-content">
                 <a href="#">Two columns</a>
                 <a href="#">Tthre columns</a>
@@ -64,8 +69,9 @@
         </div>
         <p class="slash">/</p>
         <div class="dropdown">
-            <button class="dropbtn"><a href="#" class="navigation">BLOG</a>
-            </button>
+            <div class="dropbtn">
+                <a href="#" class="navigation">Blog</a>
+            </div>
             <div class="dropdown-content">
                 <a href="#">Blog masonary</a>
                 <a href="#" class="wthtBorder">Post single</a>
@@ -73,8 +79,9 @@
         </div>
         <p class="slash">/</p>
         <div class="dropdown">
-            <button class="dropbtn"><a href="#" class="navigation">PAGES</a>
-            </button>
+            <div class="dropbtn">
+                <a href="#" class="navigation">Pages</a>
+            </div>
             <div class="dropdown-content">
                 <a href="#">Our team</a>
                 <a href="#">Archives</a>
@@ -83,7 +90,8 @@
             </div>
         </div>
         <p class="slash">/</p>
-        <a href="#" class="navigation">CONTACT</a>
+        <a href="#" class="navigation">Contact</a>
+
     </nav>
 </div>
 
@@ -126,7 +134,6 @@
             <div class="animation"><i class="anmtn fa fa-lightbulb-o" aria-hidden="true"></i>
             </div>
         </div>
-
         <div class="box">
             <div class="box-text">
                 <h4>Our Open Office</h4>
@@ -139,7 +146,6 @@
             <div class="animation"><i class="anmtn fa fa-coffee" aria-hidden="true"></i>
             </div>
         </div>
-
         <div class="box">
             <div class="box-text">
                 <h4>On-Time Delivery</h4>
@@ -187,7 +193,7 @@
                 <div class="pic-cover">
                     <img src="images/1-keepYSA.png" alt="1" class="pic"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -202,7 +208,7 @@
                 <div class="pic-cover">
                     <img src="images/2-ALoveLetterTTC.png" class="pic" alt="2"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -215,9 +221,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/3-Design&ViolenceDebate.png" class="pic" alt="3"/>
+                    <img src="images/3-Design&ViolenceDebate.png" class="pic" alt="3"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -230,9 +236,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/4-BrigetteBrownOnUmbrellas.png" class="pic" alt="4"/>
+                    <img src="images/4-BrigetteBrownOnUmbrellas.png" class="pic" alt="4"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -246,9 +252,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/5-TheNight-SideOfHospitals.png" class="pic" alt="5"/>
+                    <img src="images/5-TheNight-SideOfHospitals.png" class="pic" alt="5"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -261,9 +267,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/6-PortoDesignSummerSchool.png" class="pic" alt="6"/>
+                    <img src="images/6-PortoDesignSummerSchool.png" class="pic" alt="6"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -276,9 +282,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/7-AnOpenLetterToLarryPage.png" class="pic" alt="7"/>
+                    <img src="images/7-AnOpenLetterToLarryPage.png" class="pic" alt="7"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -291,9 +297,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/8-TheEssenceOfTeapot.png" class="pic" alt="8"/>
+                    <img src="images/8-TheEssenceOfTeapot.png" class="pic" alt="8"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -306,9 +312,9 @@
             </div>
             <div class="card">
                 <div class="pic-cover">
-                <img src="images/9-WarOfStreets&Houses.png" class="pic" alt="9"/>
+                    <img src="images/9-WarOfStreets&Houses.png" class="pic" alt="9"/>
                     <div class="middle">
-                        <a class="fa-link" href="#"></a>
+                        <a class="fa fa-link" href="#"></a>
                     </div>
                 </div>
                 <div class="card-text">
@@ -324,7 +330,7 @@
 </section>
 
 <footer>
-    <h3 class="heading footer">
+    <h3 class="heading h-3" id="footer">
         Contact us
     </h3>
     <div>
@@ -365,5 +371,6 @@
         </form>
     </div>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>

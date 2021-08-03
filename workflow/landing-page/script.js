@@ -1,18 +1,18 @@
-function myFunction() {
-    let x = document.getElementById("myMenu");
-    if (x.className === "menu") {
-        x.className += "responsive";
+function addClassName() {
+    let myMenu = document.getElementById("myMenu");
+    if (myMenu.className === "menu") {
+        myMenu.classList.add("responsive");
     } else {
-        x.className = "menu";
+        myMenu.className = "menu";
     }
 }
 
+let myNav = document.getElementById('myNav');
+
 function openNav() {
-    console.log("open")
-    document.getElementById("myNav").style.height = "100%";
+    myNav.classList.remove('closedNav');
 }
 
 function closeNav() {
-    console.log("close")
-    document.getElementById("myNav").style.height = "0%";
+    myNav.classList.add('closedNav');
 }
