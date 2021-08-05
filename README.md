@@ -20,7 +20,6 @@ So, if you're ready to work hard, go to [Getting Started](./materials/getting_st
 ## Progress
 
 - [x] [Info](#frontend-lab)
-
 - [x] [Getting Started](./materials/getting_started.md)
 - [x] [Landing Page](./materials/landing_page.md)
 - [x] [Landing Page - Working With Third-Party Services](./materials/landing_page_with_data.md)
