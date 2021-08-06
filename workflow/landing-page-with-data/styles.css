@@ -511,11 +511,12 @@ a {
 
 .pic-cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     align-content: center;
-    max-height: 2000px;
-    align-items: center;
+    /*max-height: 2300px;*/
+    /*align-items: center;*/
 }
 
 @media screen and (max-width: 1000px) {
@@ -674,8 +675,7 @@ input {
 .page-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 150px;
+    justify-content: space-around;
 }
 
 .page-buttons button {
@@ -688,12 +688,9 @@ input {
     border-radius: 10%;
 }
 
-.invisible {
-    display: none;
+.page-buttons button:hover {
+    cursor: pointer;
 }
 
-.page-buttons button:hover {
-    background-color: lightgrey;
-    border: 2px solid gray;
-    color: #2c2c2c;
-}
+
+
