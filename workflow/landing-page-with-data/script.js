@@ -7,60 +7,68 @@ function addClassName() {
     }
 }
 
-let myNav = document.getElementById('overlay');
+let overlay = document.getElementById('overlay');
 
 function openNav() {
-    myNav.classList.remove('closed-nav');
+    overlay.classList.remove('closed-nav');
 }
 
 function closeNav() {
-    myNav.classList.add('closed-nav');
+    overlay.classList.add('closed-nav');
 }
 
-// Gifs
+/* Adding Gifs */
 
 let apiKey = config.API_KEY;
-const pic_cards_ids = ["gif-1", "gif-2", "gif-3", "gif-4", "gif-5", "gif-6", "gif-7", "gif-8", "gif-9", "gif-10"];
-const LIMIT_GIFS = 8;
+const gifsLimit = 8;
 let OFFSET = 0;
-let links_ids = ["gif-link-1", "gif-link-2", "gif-link-3", "gif-link-4", "gif-link-5", "gif-link-6", "gif-link-7", "gif-link-8"]
-let titles_ids = ["gif-title-1", "gif-title-2", "gif-title-3", "gif-title-4", "gif-title-5", "gif-title-6", "gif-title-7", "gif-title-8"]
-let date_ids = ["date-1", "date-2", "date-3", "date-4", "date-5", "date-6", "date-7", "date-8"]
-
 
 const nextBtn = document.getElementById("next-button");
 const previousBtn = document.getElementById("previous-button");
 
 nextBtn.addEventListener("click", () => {
-    nextBtn.classList.add("invisible")
-    previousBtn.classList.remove("invisible");
-    OFFSET += LIMIT_GIFS;
+    OFFSET += gifsLimit;
     setup(OFFSET)
 });
 
 previousBtn.addEventListener("click", () => {
-    previousBtn.classList.add("invisible");
-    nextBtn.classList.remove("invisible");
-    OFFSET -= LIMIT_GIFS;
-    setup(OFFSET)
+    if (OFFSET - gifsLimit >= 0) {
+        OFFSET -= gifsLimit;
+        setup(OFFSET)
+    }
 })
 
 async function setup(offset) {
-    let giphyAPI = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=dogs&limit=${LIMIT_GIFS}&offset=${offset}`
+    let giphyAPI = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=dogs&limit=${gifsLimit}&offset=${offset}`
     await fetch(giphyAPI)
         .then(response => {
             return response.json();
         })
-        .then(json => {
-            for (let i = 0; i < LIMIT_GIFS; i++) {
-                let src = json.data[i].images.downsized.url;
-                let title = json.data[i].title;
-                let date = json.data[i].import_datetime;
-                document.getElementById(pic_cards_ids[i]).src = src;
-                document.getElementById(links_ids[i]).href = src;
-                document.getElementById(titles_ids[i]).textContent = title;
-                document.getElementById(date_ids[i]).textContent = date;
-            }
+        .then(apiResult => {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = "";
+            apiResult["data"].forEach((result, idx) => {
+                const content = `
+                    <div class="card">
+                        <div class="pic-cover">
+                            <img src="${result.images.downsized.url}" class="pic" id="gif-1" alt=" "/>
+                            <div class="middle">
+                                <a class="fa fa-link" href="${result.images.downsized.url}" id="gif-link-1"></a>
+                            </div>
+                        </div>
+                        <div class="card-text">
+                            <h4><a href="#" id="gif-title-${idx}">${result.title}</a></h4>
+                            <p class="card-date" id="date-${idx}">${result.import_datetime}</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Alias, deleniti, id dquibusdam aut
+                                optio saepe soluta tempore neque voluptatum.</p>
+                        </div>
+                    </div>
+                `;
+
+                // Append new created card element to the container
+                container.innerHTML += content;
+            })
         })
         .catch(err => console.log(err));
 }
