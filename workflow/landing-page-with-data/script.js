@@ -65,7 +65,6 @@ async function setup(offset) {
                         </div>
                     </div>
                 `;
-
                 // Append new created card element to the container
                 container.innerHTML += content;
             })

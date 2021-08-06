@@ -511,17 +511,16 @@ a {
 
 .pic-cards {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     align-content: center;
-    /*max-height: 2300px;*/
-    /*align-items: center;*/
+    max-height: 2300px;
+    align-items: center;
 }
 
 @media screen and (max-width: 1000px) {
     .pic-cards {
-        max-height: 2800px;
+        max-height: 2900px;
     }
 }
 
