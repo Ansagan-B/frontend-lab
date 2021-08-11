@@ -5,32 +5,27 @@
             this.date = date;
         }
 
-        parse(date, format) {
-            let result;
-            let splited = date.split("-");
+        static parse(parseDate, format) {
+            const splitted = parseDate.split("-").map(number => parseInt(number));
             let days = "";
             let months = "";
             let years = "";
-            if (format === "DD-MM-YYYY") {
-                days = parseInt(splited[0]);
-                months = parseInt(splited[1]);
-                years = parseInt(splited[2]);
-                result = new Date(`${years}-${months}-${days}`);
-            } else if (format === "MM-DD-YYYY") {
-                months = parseInt(splited[0]);
-                days = parseInt(splited[1]);
-                years = parseInt(splited[2]);
-                result = new Date(`${years}-${months}-${days}`);
-            } else if (format === "YYYY-MM-DD") {
-                years = parseInt(splited[0]);
-                months = parseInt(splited[1]);
-                days = parseInt(splited[2]);
-                result = new Date(`${years}-${months}-${days}`);
-            } else {
-                console.log(`Unexpected format! ${format}`);
-                return null;
+            switch (format) {
+                case "DD-MM-YYYY":
+                    [days, months, years] = splitted;
+                    break;
+                case "MM-DD-YYYY":
+                    [months, days, years] = splitted;
+                    break;
+                case "YYYY-MM-DD":
+                    [years, months, days] = splitted;
+                    break;
+                default:
+                    console.log(`Unexpected format! ${format}`);
+                    return null;
             }
-            return result;
+            const result = new Date(`${years}-${months}-${days}`);
+            return new CustomMoment(result);
         }
 
         format(type) {
@@ -39,24 +34,25 @@
             let months = "";
             let years = "";
             let result;
-            if (type === 'MM-DD-YYYY') {
-                months = '' + (formatDate.getMonth() + 1);
-                days = formatDate.getDay();
-                years = formatDate.getFullYear();
-                result = `${months + 1}-${days}-${years}`;
-                return result;
-            } else if (type === 'DD-MM-YYYY') {
-                years = formatDate.getFullYear();
-                months = formatDate.getMonth();
-                days = formatDate.getDate();
-                result = `${days}-${months + 1}-${years}`;
-                return result;
-            } else if (type === 'YYYY-MM-DD') {
-                years = formatDate.getFullYear();
-                months = formatDate.getMonth();
-                days = formatDate.getDate();
-                result = `${years}-${months + 1}-${days}`;
-                return result;
+            switch (type) {
+                case 'MM-DD-YYYY':
+                    months = '' + (formatDate.getMonth() + 1);
+                    days = formatDate.getDay();
+                    years = formatDate.getFullYear();
+                    result = `${months + 1}-${days}-${years}`;
+                    return result;
+                case 'DD-MM-YYYY':
+                    years = formatDate.getFullYear();
+                    months = formatDate.getMonth();
+                    days = formatDate.getDate();
+                    result = `${days}-${months + 1}-${years}`;
+                    return result;
+                case 'YYYY-MM-DD':
+                    years = formatDate.getFullYear();
+                    months = formatDate.getMonth();
+                    days = formatDate.getDate();
+                    result = `${years}-${months + 1}-${days}`;
+                    return result;
             }
         }
 
@@ -77,7 +73,7 @@
         }
 
         toDate() {
-            let result = new Date(this.date);
+            const result = new Date(this.date);
             return result;
         }
     }
