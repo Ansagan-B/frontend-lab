@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artcore</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,900">
+</head>
+
+<body>
+<header id="header">
+    <h1 class="heading"><a href="#"><span class="orange">ART</span> CORE</a></h1>
+    <div class="header-icons">
+        <div class="icon">
+            <a class="fa fa-facebook" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="icon">
+            <a class="fa fa-twitter" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="icon">
+            <a class="fa fa-linkedin" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="icon">
+            <a class="fa fa-rss" aria-hidden="true" href="#"></a>
+        </div>
+    </div>
+</header>
+
+<div class="navbar">
+    <div class="nav-icons" id="nav-icon">
+        <div class="nav-button icon">
+            <div id="overlay" class="overlay closed-nav">
+                <a href="#" class="close-btn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <p>Some text is here...</p>
+                </div>
+            </div>
+            <span onclick="openNav()"><a id="search" class="fa fa-search" href="#"></a></span>
+
+        </div>
+        <div class="nav-button icon">
+            <a class="fa fa-chevron-left" aria-hidden="true" href="#"></a>
+        </div>
+        <div class="nav-button icon">
+            <a class="fa fa-chevron-right" aria-hidden="true" href="#"></a>
+        </div>
+        <a href="#" class="burger" id="burger" onclick="addClassName()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <nav class="menu" id="page-menu">
+        <a href="#" id="home" class="navigation">Home</a>
+        <p class="slash">/</p>
+        <a href="#" class="navigation">Services</a>
+        <p class="slash">/</p>
+        <div class="dropdown">
+            <div class="drop-btn">
+                <a href="#" class="navigation">Projects</a>
+            </div>
+            <div class="dropdown-content">
+                <a href="#">Two columns</a>
+                <a href="#">Tthre columns</a>
+                <a href="#" class="no-border">Project single</a>
+            </div>
+        </div>
+        <p class="slash">/</p>
+        <div class="dropdown">
+            <div class="drop-btn">
+                <a href="#" class="navigation">Blog</a>
+            </div>
+            <div class="dropdown-content">
+                <a href="#">Blog masonary</a>
+                <a href="#" class="no-border">Post single</a>
+            </div>
+        </div>
+        <p class="slash">/</p>
+        <div class="dropdown">
+            <div class="drop-btn">
+                <a href="#" class="navigation">Pages</a>
+            </div>
+            <div class="dropdown-content">
+                <a href="#">Our team</a>
+                <a href="#">Archives</a>
+                <a href="#">Teams</a>
+                <a href="#" class="no-border">404 page</a>
+            </div>
+        </div>
+        <p class="slash">/</p>
+        <a href="#" class="navigation">Contact</a>
+
+    </nav>
+</div>
+
+<section class="main-img">
+    <div id="img-text">
+        <h2 class="heading">I &#9829; Frontend</h2>
+        <p>Some lorem ipsum text.</p>
+        <p>
+            Credit goes to <a href="https://unsplash.com/">Unsplash</a> for photos.
+        </p>
+    </div>
+</section>
+
+<main>
+    <h3 class="heading services h-3">Our services</h3>
+    <div class="boxes">
+        <div class="box">
+            <div class="box-text">
+                <h4>Quality Matter With Us</h4>
+                <p class="unsplash">
+                    Artcore is free HTML5 by template <span class="blue">template</span> <span class="green">mo</span>.
+                    Credit goes to
+                    <a href="https://unsplash.com/" class="orange">Unsplash</a> for photos used in this template. You
+                    can use this
+                    layout for your personal or commercial websites.
+                </p>
+            </div>
+            <div class="animation"><i class="animation-icon fa fa-flask" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>Creative Idea Important</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="animation-icon fa fa-lightbulb-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>Our Open Office</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="animation-icon fa fa-coffee" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>On-Time Delivery</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="animation-icon fa fa-clock-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>Sincerely Supporting</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="animation-icon fa fa-thumbs-o-up" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-text">
+                <h4>Learning New Things </h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur, odit, magnam, autem ipsum incidunt modi
+                    saepe id ullam consectetur unde minima quis.
+                </p>
+            </div>
+            <div class="animation"><i class="animation-icon fa fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section>
+    <h3 class="fourth-title heading h-3">And here are some images for you... </h3>
+    <div id="card-wrap">
+        <div class="pic-cards" id="cards-container">
+
+        <!--     Here are cards from Giphy.com    -->
+
+        </div>
+    </div>
+</section>
+
+<div class="page-buttons">
+    <button id="previous-button">⬅️ Previous</button>
+    <button id="next-button">Next ➡️</button>
+</div>
+
+<footer>
+    <h3 class="heading h-3" id="footer">
+        Contact us
+    </h3>
+    <div>
+        <form id="form">
+            <div id="contact-page">
+                This is an example of a contact page. You can set the contact page
+                in your themes <br>backend and add, remove and modify the input fields, text areas,
+                dropdowns and <br>checkboxes from your backend as well.
+            </div>
+            <h4>
+                Send Us Email
+            </h4>
+            <div>
+                <label for="name">
+                    Your name:
+                </label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email">
+                    Email Address:
+                </label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="number">
+                    Phone Number:
+                </label>
+                <input type="text" id="number">
+            </div>
+            <div>
+                <label for="message">
+                    Your message:
+                </label>
+                <textarea id="message"></textarea>
+            </div>
+            <input type="submit" value="Send message" id="submit">
+        </form>
+    </div>
+</footer>
+<script src="configs.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
