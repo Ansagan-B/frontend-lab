@@ -5,24 +5,24 @@ const result = document.getElementById('result');
 
 class Cacher {
     constructor() {
-        this.cache = new Map();
+        this.cache = new WeakMap();
     }
 
-    process(obj) {
+    withCache(obj) {
         if (!this.cache.has(obj)) {
-            let result = this.factorial(obj)
-            this.cache.set(obj, result);
+            this.cache.set(obj, obj);
         }
         return this.cache.get(obj);
     }
+}
 
-    factorial(number) {
-        return math.factorial(number);
-    }
+function factorial(number) {
+    return math.factorial(number);
 }
 
 const cacher = new Cacher();
+const cachedFactorial = cacher.withCache(factorial)
 
 calc.addEventListener('click', () => {
-    result.textContent = cacher.process(input.value);
+    result.textContent = cachedFactorial(input.value);
 });
