@@ -18,7 +18,6 @@ class Cacher {
 }
 
 function factorial(number) {
-    console.log(`Number: ${number}`);
     return math.factorial(number);
 }
 
@@ -26,6 +25,5 @@ const cacher = new Cacher();
 const cachedFactorial = cacher.withCache(factorial)
 
 calc.addEventListener('click', () => {
-    console.log(cachedFactorial(input.value))
     result.textContent = cachedFactorial(input.value);
 });
