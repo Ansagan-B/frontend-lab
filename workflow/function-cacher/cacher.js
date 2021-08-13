@@ -4,7 +4,7 @@ const result = document.getElementById('result');
 
 class Cacher {
     withCache(cachedFunction) {
-        let cache = {};
+        const cache = {};
         return function (...args) {
             const key = args.join()
             if (cache[key]) {
