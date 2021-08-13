@@ -3,14 +3,14 @@ const calc = document.getElementById('calc');
 const result = document.getElementById('result');
 
 class Cacher {
-    withCache(fn) {
+    withCache(cachedFunction) {
         let cache = {};
         return function (...args) {
             const key = args.join()
             if (cache[key]) {
                 return cache[key];
             } else {
-                cache[key] = fn(key);
+                cache[key] = cachedFunction(...args);
                 return cache[key];
             }
         }
