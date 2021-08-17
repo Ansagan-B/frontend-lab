@@ -7,38 +7,9 @@
 </head>
 <body>
 <div id="wrapper">
-    <ul class="tabs">
-        <li class="tab-links select" id="tabs-1" onclick="selectTab(1)">JavaScript</li>
-        <li class="tab-links" id="tabs-2" onclick="selectTab(2)">Jquery</li>
-        <li class="tab-links" id="tabs-3" onclick="selectTab(3)">DOM</li>
-        <li class="tab-links" id="tabs-4" onclick="selectTab(4)">CSS</li>
+    <ul class="tabs" id="tabsNav">
     </ul>
-    <div class="tabs-content select" id="tabContent1">
-        <p>
-            JavaScript — прототипно-ориентированный сценарный язык программирования. Является реализацией языка ECMAScript.
-        </p>
-        <p>
-            JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений.
-            Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.
-        </p>
-    </div>
-    <div class="tabs-content" id="tabContent2">
-        <p>
-            jQuery — библиотека JavaScript, фокусирующаяся на взаимодействии JavaScript и HTML.
-            Библиотека jQuery помогает легко получать доступ к любому элементу DOM, обращаться к атрибутам и содержимому элементов DOM, манипулировать ими.
-            Также библиотека jQuery предоставляет удобный API для работы с AJAX. Сейчас разработка jQuery ведётся командой jQuery во главе с Джоном Резигом.
-        </p>
-    </div>
-    <div class="tabs-content" id="tabContent3">
-        <p>
-            DOM — это не зависящий от платформы и языка программный интерфейс, позволяющий программам и скриптам получить доступ к содержимому
-            HTML-, XHTML- и XML-документов, а также изменять содержимое, структуру и оформление таких документов.
-        </p>
-    </div>
-    <div class="tabs-content" id="tabContent4">
-        <p>
-            CSS — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.
-        </p>
+    <div id="tabsContent">
     </div>
 </div>
 <script src="tabs-script.js" type="text/javascript"></script>
