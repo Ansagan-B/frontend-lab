@@ -29,7 +29,7 @@
     border: none;
     outline: none;
 }
-.tab-links.select {
+.tab-links.selected {
     color: #fff;
     background-color: forestgreen;
 }
@@ -38,6 +38,6 @@
     font: 12px Arial;
     text-align: justify;
 }
-.tabs-content.select {
+.tabs-content.selected {
     display: block;
 }
