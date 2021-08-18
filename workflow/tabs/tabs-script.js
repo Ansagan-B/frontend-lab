@@ -43,20 +43,20 @@ window.onload = function () {
     selectTab();
 };
 
+function toArray(obj) {
+    if (Object.prototype.toString.call(obj) === '[object Array]') {
+        return obj;
+    }
+    let objectsArray = [];
+    for (let i = 0; i < obj.length; i++) {
+        objectsArray.push(obj[i]);
+    }
+    return objectsArray;
+}
+
 function selectTab(index = 1) {
 
     const selected = document.getElementsByClassName('selected');
-
-    function toArray(obj) {
-        if (Object.prototype.toString.call(obj) === '[object Array]') {
-            return obj;
-        }
-        let objectsArray = [];
-        for (let i = 0; i < obj.length; i++) {
-            objectsArray.push(obj[i]);
-        }
-        return objectsArray;
-    }
 
     toArray(selected).forEach(item => {
         item.classList.remove('selected');
