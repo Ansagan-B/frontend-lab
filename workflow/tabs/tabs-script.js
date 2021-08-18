@@ -40,18 +40,27 @@ tabs.forEach(tab => {
 })
 
 window.onload = function () {
-    selectTab(1);
+    selectTab();
 };
 
-function selectTab(index) {
-    for (let i = 1; i <= 4; i++) {
-        if (document.getElementById(`${i}`).classList.contains('selected')) {
-            document.getElementById(`${i}`).classList.remove('selected');
+function selectTab(index = 1) {
+
+    const selected = document.getElementsByClassName('selected');
+
+    function toArray(obj) {
+        if (Object.prototype.toString.call(obj) === '[object Array]') {
+            return obj;
         }
-        if (document.getElementById(`tabContent${i}`).classList.contains('selected')) {
-            document.getElementById(`tabContent${i}`).classList.remove('selected');
+        let objectsArray = [];
+        for (let i = 0; i < obj.length; i++) {
+            objectsArray.push(obj[i]);
         }
+        return objectsArray;
     }
+
+    toArray(selected).forEach(item => {
+        item.classList.remove('selected');
+    })
     document.getElementById(index).classList.add('selected');
     document.getElementById(`tabContent${index}`).classList.add('selected');
 }
