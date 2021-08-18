@@ -21,10 +21,10 @@ const tabs = [
     {
         id: 4,
         title: "CSS",
-        content: "CSS — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.", // содержимое внутри табы
+        content: "CSS — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.",
         tabIndex: 'tabContent4'
     }
-]
+];
 
 const tabsNav = document.getElementById('tabsNav');
 const tabsContent = document.getElementById('tabsContent');
@@ -40,11 +40,11 @@ tabs.forEach(tab => {
 })
 
 window.onload = function () {
-    selectTab(1)
-}
+    selectTab(1);
+};
 
 function selectTab(index) {
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i <= 4; i++) {
         if (document.getElementById(`${i}`).classList.contains('selected')) {
             document.getElementById(`${i}`).classList.remove('selected');
         }
