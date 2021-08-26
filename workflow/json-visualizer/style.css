@@ -41,7 +41,7 @@ header {
 }
 
 .built-json {
-    margin: 0 auto;
+    margin: 15px;
     text-align: center;
     flex: 1;
     display: flex;
@@ -77,4 +77,20 @@ header {
 
 .blue {
     color: blue;
+}
+
+.gray {
+    color: dimgrey;
+}
+
+.open {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
 }
