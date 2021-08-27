@@ -79,18 +79,10 @@ header {
     color: blue;
 }
 
-.gray {
-    color: dimgrey;
+.purple {
+    color: purple;
 }
 
-.open {
+.clickable {
     cursor: pointer;
-}
-
-.hidden {
-    display: none;
-}
-
-.show {
-    display: block;
 }
