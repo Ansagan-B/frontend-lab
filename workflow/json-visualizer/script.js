@@ -26,28 +26,26 @@ function addClassByType(content) {
     } else if (typeof content === 'string') {
         return 'red';
     } else if (typeof content === 'boolean') {
-        return 'gray';
+        return 'purple';
     } else {
         return 'green';
     }
 }
 
 function showResult(val) {
-    let parsedJSON = parseJSONString(val)
     let resultArray = [];
 
-    if (parsedJSON === null) {
+    if (val === null) {
         result.textContent = 'Wrong format';
         result.innerHTML;
     } else {
 
-        for (let [key, value] of Object.entries(parsedJSON)) {
+        for (let [key, value] of Object.entries(val)) {
 
             if (typeof value === 'object') {
                 const lengthStr = Array.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
-                resultArray.push(`<span>${key} ${lengthStr}: </span>
-                                    <span class='open'>${value}</span>`);
-                resultArray.push(showResult(value));
+                resultArray.push(`<span class='clickable'>${key} ${lengthStr}: </span>
+                                    <span style='display: none'>${showResult(value)}</span>`);
             } else {
                 let content = value;
                 const color = addClassByType(content);
@@ -63,15 +61,24 @@ function showResult(val) {
 }
 
 function renderResult(value) {
-    result.innerHTML = showResult(value);
+    const parsedJSON = parseJSONString(value);
+    result.innerHTML = showResult(parsedJSON);
     openAttached();
 }
 
 function openAttached() {
-    let items = document.getElementsByClassName('open')
+    let items = document.getElementsByClassName('clickable');
 
-    for (let item of items) {
-        item.addEventListener('click', () => (
-        item.classList.add('show')))
-    }
+    Array.from(items).forEach(el => {
+        el.onclick = () => {
+            const nextEl = el.nextElementSibling;
+
+            if (nextEl.style && nextEl.style.display === 'none') {
+                nextEl.style.display = 'block';
+            } else if (nextEl.style && nextEl.style.display === 'block') {
+                nextEl.style.display = 'none';
+            }
+        };
+    })
+
 }
