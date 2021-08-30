@@ -36,8 +36,8 @@ header {
 #text-area {
     outline: none;
     border: none;
-    max-width: 600px;
-    max-height: 200px;
+    width: 99%;
+    height: 70%;
 }
 
 .built-json {
@@ -46,25 +46,29 @@ header {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
 }
 
 #button,
 #clear-button {
     height: 100px;
+    margin: 15px 0;
 }
 
 #json-tree {
-    text-align: center;
     flex: 3;
     border: 1px solid orange;
 }
 
 #json-tree h3 {
+    text-align: center;
     margin-top: 0;
     padding: 20px;
     border: 1px solid orange;
     background-color: orange;
+}
+
+#result {
+    margin-left: 10px;
 }
 
 .red {
@@ -83,6 +87,39 @@ header {
     color: purple;
 }
 
+.clickable::before {
+    display: block;
+    content: '';
+    cursor: pointer;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid orange;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.rotated::before {
+    transform: rotate(-90deg);
+}
+
 .clickable {
     cursor: pointer;
 }
+
+.attached-elements {
+    margin-left: 15px;
+}
+
+.additional-info h3 {
+    margin-left: 15px;
+}
+
+.additional-info li {
+    margin-top: 10px;
+}
+
+
+

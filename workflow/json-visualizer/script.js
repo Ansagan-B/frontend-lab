@@ -36,23 +36,26 @@ function showResult(val) {
     let resultArray = [];
 
     if (val === null) {
-        result.textContent = 'Wrong format';
+        result.textContent = `Wrong format`;
         result.innerHTML;
     } else {
 
         for (let [key, value] of Object.entries(val)) {
 
-            if (typeof value === 'object') {
+            if (typeof value === 'object' && value !== null) {
                 const lengthStr = Array.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
-                resultArray.push(`<span class='clickable'>${key} ${lengthStr}: </span>
-                                    <span style='display: none'>${showResult(value)}</span>`);
+                resultArray.push(`<div>
+                                    <span class='clickable'>${key} ${lengthStr}: </span>
+                                    <span style='display: block' class='attached-elements'>${showResult(value)}</span>
+                                  </div>
+                                  `);
             } else {
                 let content = value;
                 const color = addClassByType(content);
                 resultArray.push(
-                    `<p>${key}: 
+                    `<div><span>${key}: </span>
                         <span class=${color}>${content}</span>
-                    </p>`
+                    </div>`
                 );
             }
         }
@@ -66,19 +69,25 @@ function renderResult(value) {
     openAttached();
 }
 
+function changeDisplay(el) {
+    const nextEl = el.nextElementSibling;
+
+    if (nextEl.style && nextEl.style.display === 'block') {
+        nextEl.style.display = 'none';
+        el.classList.toggle('rotated');
+    } else {
+        nextEl.style.display = 'block';
+        el.classList.toggle('rotated');
+    }
+}
+
 function openAttached() {
     let items = document.getElementsByClassName('clickable');
 
     Array.from(items).forEach(el => {
-        el.onclick = () => {
-            const nextEl = el.nextElementSibling;
-
-            if (nextEl.style && nextEl.style.display === 'none') {
-                nextEl.style.display = 'block';
-            } else if (nextEl.style && nextEl.style.display === 'block') {
-                nextEl.style.display = 'none';
-            }
-        };
+        el.addEventListener('click', function () {
+            changeDisplay(el)
+        });
     })
-
 }
+
