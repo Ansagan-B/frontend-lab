@@ -3,7 +3,7 @@ const result = document.getElementById('result');
 const button = document.getElementById('button');
 const clearButton = document.getElementById('clear-button');
 
-button.addEventListener('click', () => renderResult());
+button.addEventListener('click', handleButtonClick);
 clearButton.addEventListener('click', clearTextarea);
 
 function clearTextarea() {
@@ -34,23 +34,23 @@ function addClassByType(content) {
     return colorByTypeVariants[type] || colorByTypeVariants.default;
 }
 
-function showResult(val) {
+function buildResultString(val) {
     let resultArray = [];
 
     for (let [key, value] of Object.entries(val)) {
         if (typeof value === 'object' && value !== null) {
             const lengthStr = Array.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
             resultArray.push(`<div>
-                                   <span class='clickable'> ${key} ${lengthStr}: </span>
-                                   <span style='display: block' class='attached-elements'> ${showResult(value)} </span>
+                                   <span class='clickable'>${key} ${lengthStr}: </span>
+                                   <span style='display: block' class='attached-elements'>${buildResultString(value)}</span>
                                  </div>
                                   `);
         } else {
             const color = addClassByType(value);
             resultArray.push(
                 `<div>
-                     <span> ${key}: </span>
-                     <span class=${color}> ${value} </span>
+                     <span>${key}: </span>
+                     <span class=${color}>${value}</span>
                   </div>`
             );
         }
@@ -58,10 +58,8 @@ function showResult(val) {
     return resultArray.join('');
 }
 
-function renderResult() {
-    const parsedJSON = parseJSONString(textarea.value);
-    result.innerHTML = showResult(parsedJSON);
-    openAttached();
+function renderResult(resultString) {
+    result.innerHTML = resultString;
 }
 
 function changeDisplay(eventObj) {
@@ -82,4 +80,12 @@ function openAttached() {
     Array.from(items).forEach(item => {
         item.addEventListener('click', changeDisplay);
     })
+}
+
+function handleButtonClick() {
+    const parsedJSON = parseJSONString(textarea.value);
+    const treeToShow = buildResultString(parsedJSON);
+
+    renderResult(treeToShow);
+    openAttached();
 }
