@@ -16,8 +16,6 @@ function parseJSONString(str) {
     try {
         return JSON.parse(str);
     } catch (err) {
-        result.textContent = `Wrong format`;
-        result.innerHTML;
         return null;
     }
 }
@@ -37,29 +35,40 @@ function addClassByType(content) {
 function buildResultString(val) {
     let resultArray = [];
 
-    for (let [key, value] of Object.entries(val)) {
-        if (typeof value === 'object' && value !== null) {
-            const lengthStr = Array.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
-            resultArray.push(`<div>
+    if (val === null) {
+        return renderResult(val)
+    } else {
+        for (let [key, value] of Object.entries(val)) {
+            if (typeof value === 'object' && value !== null) {
+                const lengthStr = Array.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
+                resultArray.push(`<div>
                                    <span class='clickable'>${key} ${lengthStr}: </span>
                                    <span style='display: block' class='attached-elements'>${buildResultString(value)}</span>
                                  </div>
                                   `);
-        } else {
-            const color = addClassByType(value);
-            resultArray.push(
-                `<div>
+            } else {
+                const color = addClassByType(value);
+                resultArray.push(
+                    `<div>
                      <span>${key}: </span>
                      <span class=${color}>${value}</span>
                   </div>`
-            );
+                );
+            }
         }
     }
+
     return resultArray.join('');
 }
 
 function renderResult(resultString) {
-    result.innerHTML = resultString;
+
+    if (resultString === null) {
+        return result.innerHTML = result.textContent = `Wrong format`;
+    } else {
+        return result.innerHTML = resultString;
+    }
+
 }
 
 function changeDisplay(eventObj) {
@@ -73,6 +82,7 @@ function changeDisplay(eventObj) {
         nextEl.style.display = 'block';
         item.classList.toggle('rotated');
     }
+
 }
 
 function openAttached() {
