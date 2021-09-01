@@ -14,9 +14,12 @@ function clearTextarea() {
 
 function parseJSONString(str) {
     try {
+        if (str === 'null') {
+            throw new Error();
+        }
         return JSON.parse(str);
     } catch (err) {
-        return null;
+        renderResult(`<span>Wrong format</span>`);
     }
 }
 
@@ -35,9 +38,7 @@ function addClassByType(content) {
 function buildResultString(val) {
     let resultArray = [];
 
-    if (val === null) {
-        return renderResult(val)
-    } else {
+    if (val !== undefined) {
         for (let [key, value] of Object.entries(val)) {
             if (typeof value === 'object' && value !== null) {
                 const lengthStr = Array.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
@@ -56,19 +57,13 @@ function buildResultString(val) {
                 );
             }
         }
-    }
 
-    return resultArray.join('');
+        return resultArray.join('');
+    }
 }
 
 function renderResult(resultString) {
-
-    if (resultString === null) {
-        return result.innerHTML = result.textContent = `Wrong format`;
-    } else {
-        return result.innerHTML = resultString;
-    }
-
+    result.innerHTML = resultString;
 }
 
 function changeDisplay(eventObj) {
@@ -96,6 +91,6 @@ function handleButtonClick() {
     const parsedJSON = parseJSONString(textarea.value);
     const treeToShow = buildResultString(parsedJSON);
 
-    renderResult(treeToShow);
+    treeToShow && renderResult(treeToShow);
     openAttached();
 }
