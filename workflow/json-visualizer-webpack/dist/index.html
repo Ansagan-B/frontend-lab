@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>JSON Visualizer</title>
+<script defer src="vendors-node_modules_lodash_lodash_js.a5aa8056ce56f3af3330.js"></script><script defer src="main.8543dcdbc8e0d050c685.js"></script><script defer src="visualizer.63609d95e108a09801cc.js"></script><link href="main.2b49781ffe430d08a447.css" rel="stylesheet"></head>
+<body>
+<header>JSON visualizer</header>
+<div id="wrapper">
+    <div id="input">
+        <h3>JSON String</h3>
+        <label for="text-area"></label>
+        <textarea id="text-area"></textarea>
+    </div>
+    <div class="built-json">
+        <button type="button" id="button">Build JSON Tree</button>
+        <button type="button" id="clear-button">Clear</button>
+    </div>
+    <div id="json-tree">
+        <h3>JSON Tree</h3>
+        <div id="result"></div>
+    </div>
+</div>
+<div class="additional-info">
+    <h3>Coloring value by type</h3>
+    <ul>
+        <li>Type of <span class="blue">"number": blue</span> color;</li>
+        <li>Type of <span class="red">"string": red</span> color;</li>
+        <li>Type of <span class="purple">"boolean": purple</span> color;</li>
+        <li>Other types: <span class="green">green</span> color.</li>
+    </ul>
+</div>
+</body>

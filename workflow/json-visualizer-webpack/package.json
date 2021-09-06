@@ -1,0 +1,36 @@
+{
+  "name": "json-visualizer-webpack",
+  "version": "1.0.0",
+  "description": "JSON-visualizer with webpack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "json-visualizer-webpack"
+  },
+  "keywords": [
+    "json-visualiser",
+    "json-viewer",
+    "webpack"
+  ],
+  "author": "Ansagan-B <ansagan.gb@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^2.2.2",
+    "node-sass": "^6.0.1",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.51.2",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.8.0"
+  }
+}
