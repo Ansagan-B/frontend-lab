@@ -3,6 +3,8 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
+const CompressionPlugin = require('compression-webpack-plugin');
+const zlib = require('zlib');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -15,11 +17,32 @@ const plugins = () => {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css'
-        })
+        }),
     ]
 
     if (isProd) {
-        base.push(new BundleAnalyzerPlugin())
+        base.push(
+            new BundleAnalyzerPlugin(),
+            new CompressionPlugin({
+                filename: '[path][base].gz',
+                algorithm: 'gzip',
+                test: /\.js$|\.css$|\.html$/,
+                threshold: 10240,
+                minRatio: 0.8,
+            }),
+            new CompressionPlugin({
+                filename: '[path][base].br',
+                algorithm: 'brotliCompress',
+                test: /\.(js|css|html|svg)$/,
+                compressionOptions: {
+                    params: {
+                        [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+                    },
+                },
+                threshold: 10240,
+                minRatio: 0.8,
+            }),
+        )
     }
 
     return base;
@@ -28,13 +51,11 @@ const plugins = () => {
 module.exports = {
     mode: 'development',
     entry: {
-        main: './src/index.js',
-        visualizer: './src/visualizer.js'
+        main: './src/index.js'
     },
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'dist'),
-        library: 'webpackNumbers',
+        path: path.resolve(__dirname, 'dist')
     },
     optimization: {
         splitChunks: {

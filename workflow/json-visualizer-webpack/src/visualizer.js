@@ -1,4 +1,6 @@
-import * as _ from 'lodash';
+import _isNull from 'lodash/isNull';
+import _isObject from 'lodash/isObject';
+import _isArray from 'lodash/isArray';
 
 const result = document.getElementById('result');
 
@@ -6,7 +8,7 @@ export default class JsonVisualizer {
 
     parseJSONString(str) {
         try {
-            if (_.isNull(str)) {
+            if (str === 'null') {
                 throw new Error();
             }
             return JSON.parse(str);
@@ -32,8 +34,8 @@ export default class JsonVisualizer {
 
         if (val !== undefined) {
             for (let [key, value] of Object.entries(val)) {
-                if (_.isObject(value) && !_.isNull(value)) {
-                    const lengthStr = _.isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
+                if (_isObject(value) && !_isNull(value)) {
+                    const lengthStr = _isArray(value) ? `[${value.length}]` : `{${Object.keys(value).length}}`;
                     resultArray.push(`<div>
                                    <span class='clickable'>${key} ${lengthStr}: </span>
                                    <span style='display: block' class='attached-elements'>${this.buildResultString(value)}</span>

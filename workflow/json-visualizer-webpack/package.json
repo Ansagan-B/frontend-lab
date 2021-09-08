@@ -4,8 +4,9 @@
   "description": "JSON-visualizer with webpack",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "start": "cross-env NODE_ENV=development webpack server --mode development --open",
     "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "repository": {
@@ -21,9 +22,10 @@
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^8.0.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
-    "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^2.2.2",
     "node-sass": "^6.0.1",
     "sass": "^1.39.0",
@@ -31,6 +33,10 @@
     "style-loader": "^3.2.1",
     "webpack": "^5.51.2",
     "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.8.0"
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
