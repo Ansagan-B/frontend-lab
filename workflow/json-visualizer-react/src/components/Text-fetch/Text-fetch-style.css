@@ -1,0 +1,116 @@
+#input {
+    border: 1px solid orange;
+    flex: 3;
+    width: inherit;
+}
+
+#input h3 {
+    text-align: center;
+    margin-top: 0;
+    padding: 20px;
+    border: 1px solid orange;
+    background-color: orange;
+}
+
+#text-area {
+    outline: none;
+    border: none;
+    width: 99%;
+    height: 70%;
+}
+
+header {
+    background-color: lightslategrey;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+}
+
+#wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.built-json {
+    margin: 15px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#button,
+#clear-button {
+    height: 100px;
+    margin: 15px 0;
+}
+
+#json-tree {
+    flex: 3;
+    border: 1px solid orange;
+}
+
+#json-tree h3 {
+    text-align: center;
+    margin-top: 0;
+    padding: 20px;
+    border: 1px solid orange;
+    background-color: orange;
+}
+
+#result {
+    margin-left: 12px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.purple {
+    color: purple;
+}
+
+.clickable::before {
+    display: block;
+    content: '';
+    cursor: pointer;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid orange;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.rotated::before {
+    transform: rotate(-90deg);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.attached-elements {
+    margin-left: 15px;
+}
+
+.additional-info h3 {
+    margin-left: 15px;
+}
+
+.additional-info li {
+    margin-top: 10px;
+}
